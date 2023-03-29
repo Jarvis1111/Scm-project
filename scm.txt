@@ -55,3 +55,46 @@ class Account:
                 return 1
         except:
             raise ValueError("Something Went Wrong")
+    @classmethod
+    def closeaccount(b,a,d,f,c):
+        p=input("Are to sure to delete the account: ")
+        if p=="Yes" or p=="yes":
+            try:
+                for i in range(len(a)):
+                    if c in a[i]:
+                        a.pop(i)
+                d.remove(c)
+                f.remove(c)
+            except:
+                ...
+            else:
+                print("Account Deleted Successfully.")
+        if p=="No" or p=="no":
+            pass
+    @classmethod
+    def find(b,a,c,d):
+        if c in Account.l or c in Account.l2 or c in Account.l4:
+            try:
+                for i in range(len(a)):
+                    if c in a[i] and  d in a[i]:
+                        return (f"{a[i][d]}")
+            except:
+                print("Something went wrong")
+    
+    @classmethod
+    def passwordgenerator(a,b=15):
+        password_length = b
+        characters = "abcdefghijklmnopqrstuvwx123456789"
+        password = ""   
+        for index in range(password_length):
+            password = password + random.choice(characters)
+        return password
+    @classmethod
+    def officialportal(c,a):
+        if a not in Account.k:
+            print("Invalid input entered")
+    @classmethod
+    def upitransfer(z,a,b,c,d,e):
+        a=Account.withdrawl(a,c,e)
+        if a==1:
+            Account.deposit(b,d,e)
