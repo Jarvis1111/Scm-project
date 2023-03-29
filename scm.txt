@@ -98,3 +98,91 @@ class Account:
         a=Account.withdrawl(a,c,e)
         if a==1:
             Account.deposit(b,d,e)
+    @classmethod
+    def CreatingAccount(P):
+        a=input("Which type of bank account you want to open: Saving Account/Current account/Fixed account: ")
+        if a=="Saving Account" or a=="saving account" or a=="Saving account":
+            a1=input("Pass me  your mobile number: ")
+            if re.search(r"^[0-9]+$",a1) is None:
+                raise ValueError("Invalid Mobile Number")
+            if len(a1)!=10:
+                raise ValueError("Invalid Mobile number")
+            a2=input("Pass me  your Email address: ")
+            if re.search(r"([A-Za-z0-9]+[.-_])*[A-Za-z0-9]+@[A-Za-z0-9-]+(\.[A-Z|a-z]{2,})+",a2) is None:
+                raise ValueError("Invalid Email address")
+            a3=input("Pass me  your Aadhar card number: ")
+            if re.search(r"^[0-9]+$",a3) is None:
+                raise ValueError("Invalid Aadhar Number")
+            if len(a3)!=12:
+                raise ValueError("Invalid Aadhar number")
+            while True:
+                a=random.randint(1000000000000,9999999999999)
+                if a not in Account.l:
+                    break
+            print(f"Thank You for Trusting our Website.\nYour account number is: {a}")
+            while True:
+                s=random.randint(1000000000,9999999999)
+                if s not in Account.d:
+                    break
+            password=Account.passwordgenerator()
+            print(f"Your Customer Id and password is {s} and {password}")
+            Account.l.add(a)
+            Account.d.add(s)
+            Account.l1.append({a:0,"Mobile Number":a1,"E-mail Address":a2,"Aadhar Number":a3,"Account Number":a,"Customer Id":s,s:password,"Password":password})
+
+        if a=="Current Account" or a=="current account" or a=="Current account":
+            a1=input("Pass me  your mobile number: ")
+            if re.search(r"^[0-9]+$",a1) is None:
+                raise ValueError("Invalid Mobile Number")
+            if len(a1)!=10:
+                raise ValueError("Invalid Mobile number")
+            a2=input("Pass me  your Email address: ")
+            if re.search(r"([A-Za-z0-9]+[.-_])*[A-Za-z0-9]+@[A-Za-z0-9-]+(\.[A-Z|a-z]{2,})+",a2) is None:
+                raise ValueError("Invalid Email address")
+            a3=input("Pass me  your Aadhar card number: ")
+            if re.search(r"^[0-9]+$",a3) is None:
+                raise ValueError("Invalid Aadhar Number")
+            if len(a3)!=12:
+                raise ValueError("Invalid Aadhar number")
+            while True :
+                a=random.randint(1000000000000,9999999999999)
+                if a not in Account.l2:
+                    break
+            print(f"Thank You for Trusting our Website.\nYour account number is: {a}")
+            while True:
+                s=random.randint(1000000000,9999999999)
+                if s not in Account.d1:
+                    break
+            password=Account.passwordgenerator()
+            print(f"Your Customer Id and password is {s} and {password}")
+            Account.l2.add(a)
+            Account.d1.add(s)
+            Account.l3.append({a:0,"Mobile Number":a1,"E-mail Address":a2,"Aadhar Number":a3,"Account Number":a,"Customer Id":s,s:password,"Password":password})
+            
+        if a=="Fixed Account" or a=="fixed account" or a=="Fixed account":
+            a1=input("Pass me  your mobile number: ")
+            if re.search(r"^[0-9]+$",a1) is None:
+                raise ValueError("Invalid Mobile Number")
+            if len(a1)!=10:
+                raise ValueError("Invalid Mobile number")
+            a2=input("Pass me  your Email address: ")
+            if re.search(r"([A-Za-z0-9]+[.-_])*[A-Za-z0-9]+@[A-Za-z0-9-]+(\.[A-Z|a-z]{2,})+",a2) is None:
+                raise ValueError("Invalid Email address")
+            a3=input("Pass me  your Aadhar card number: ")
+            if re.search(r"^[0-9]+$",a3) is None:
+                raise ValueError("Invalid Aadhar Number")
+            if len(a3)!=12:
+                raise ValueError("Invalid Aadhar number")
+            while True:
+                a=random.randint(1000000000000,9999999999999)
+                if a not in Account.l4:
+                    break
+            print(f"Thank You for Trusting our Website.\nYour account number is: {a}")
+            while True:
+                s=random.randint(1000000000,9999999999)
+                if s not in Account.d2:
+                    break
+            password=Account.passwordgenerator()
+            print(f"Your Customer Id and password is {s} and {password}")
+            Account.l4.add(a)
+            Account.l5.append({a:0,"Mobile Number":a1,"E-mail Address":a2,"Aadhar Number":a3,"Account Number":a,"Customer Id":s,s:password,"Password":password})
